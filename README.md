@@ -20,7 +20,7 @@ This extension uses the namespace `bulk`.
 
 A document that supports this extension **MAY** include any of the top-level members allowed by the base specification with the exception of `data` and `included`, which **MUST NOT** be included.
 
-In addition, such a document **MUST** include the `bulk:data` member. The value of the `bulk:data` member **MUST** be an array of one or more [resource objects](https://jsonapi.org/format/#document-resource-objects). Those resource objects are called _primary data_.
+In addition, such a document **MUST** include the `bulk:data` member. The value of the `bulk:data` member **MUST** be an array of one or more [resource objects](https://jsonapi.org/format/#document-resource-objects). Those resource objects are called _primary data_ and **MUST** all have the same `type`.
 
 The document **MAY** include the `bulk:included` member. The value of the `bulk:included` member **MUST** be an array of resource objects. Those resource objects are called _included resources_.
 
