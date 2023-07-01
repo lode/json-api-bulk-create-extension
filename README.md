@@ -28,9 +28,9 @@ The document **MAY** include the `bulk:included` member. The value of the `bulk:
 
 The JSON:API bulk extension allows creation of related resources in a single request.
 
-Resource objects included as primary data **MAY** reference existing resources, but **MUST NOT** reference any other resources included in the document.
+Resource objects included as primary data **MAY** reference existing resources, but **MUST NOT** reference any other resources included as primary data.
 
-> Note: A resource provided as primary data may be related to another resource in the request. But this relationship must be defined by the included resource only.
+> Note: A resource provided as primary data may be related to another resource in the request. But this relationship must be defined _from_ an included resource _to_ a primary resource. For example in a `spouse` bi-directional relationship.
 
 An included resource **MUST** only reference
 
