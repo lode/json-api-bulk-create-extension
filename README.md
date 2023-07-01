@@ -95,9 +95,9 @@ A server **MAY** support the bulk create extension only for some resource types.
 
 A server **MUST** perform the request atomically. If creating one resource fails, no resource **MUST** be created.
 
-A server **MUST** create the resources in the order they appear in `bulk:data` and `bulk:included`. A server **MUST** create the resources in `bulk:data` before the resources in `bulk:included`.
+A server **MUST** reject the request if two resources, which should be created, both have a to-one relationship to the same resource.
 
-> Note: If two resources, which should be created, both have a to-one relationship to the same resource, the one listed in the document last wins. A server may validate the document against such scenarios and reject the request.
+> Note: A server could decide to create the resources in the order they appear in `bulk:data` and `bulk:included`, and processing `bulk:data` before the resources in `bulk:included`. This might make it easier to validate relationships between resources.
 
 ## Response
 
